@@ -1,11 +1,12 @@
 {
   "name": "serializers-newtonsoft",
+  "scope": "beatthat",
   "version": "1.0.2",
   "description": "fill in description",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-scope/your-pkg-name.git"
+    "url": "git+https://github.com/beatthat/serializers-newtonsoft.git"
   },
   "files": [
     "index.js",
@@ -28,9 +29,9 @@
   "author": "larrykirschner@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/your-scope/your-pkg-name/issues"
+    "url": "https://github.com/beatthat/serializers-newtonsoft/issues"
   },
-  "homepage": "https://github.com/your-scope/your-pkg-name",
+  "homepage": "https://github.com/beatthat/serializers-newtonsoft",
   "scripts": {
     "clean": "rm -f *.tgz package-lock.json && cd test && npm run clean",
     "template-update": "node scripts/template-update.js",
