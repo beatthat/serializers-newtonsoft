@@ -1,7 +1,7 @@
 {
   "name": "serializers-newtonsoft",
   "scope": "beatthat",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "fill in description",
   "main": "index.js",
   "repository": {
