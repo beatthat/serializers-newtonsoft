@@ -18,12 +18,12 @@
     "readmefiles"
   ],
   "keywords": [
-    "unity",
-    "unity3d",
-    "plugin",
-    "package",
     "csharp",
     "npm",
+    "package",
+    "plugin",
+    "unity",
+    "unity3d",
     "unpm"
   ],
   "author": "larrykirschner@gmail.com",
@@ -38,7 +38,7 @@
     "pretest-install": "rm -f *.tgz",
     "test-install:pack-unpm": "rm beatthat-unity-npm-utils*.tgz & npm pack @beatthat/unity-npm-utils && mv $(ls beatthat-unity-npm-utils*.tgz) beatthat-unity-npm-utils.tgz",
     "test-install:pack": "npm pack && cp ${npm_package_name}-${npm_package_version}.tgz ${npm_package_name}-latest.tgz ",
-    "test-install": "npm run test-install:pack-unpm && npm run test-install:pack && cd test && npm run clean && npm install",
+    "test-install": "npm pack && cp ${npm_package_name}-${npm_package_version}.tgz ${npm_package_name}-latest.tgz && cd test && npm run clean && npm install",
     "test-cp2src": "cd test && node scripts/cp2src.js",
     "test-overwrite2src": "cd test && node scripts/overwrite2src.js",
     "docs-generate": "node scripts/docs-generate.js",
@@ -56,7 +56,8 @@
   },
   "dependencies": {
     "path": "^0.12.7",
-    "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^1.0.85",
+    "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^1.0.0",
     "serializers": "github:beatthat/serializers#semver:^1.0.0"
-  }
+  },
+  "devDependencies": {}
 }
