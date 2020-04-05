@@ -1,0 +1,60 @@
+{
+  "name": "serializers-newtonsoft",
+  "version": "1.0.0",
+  "description": "fill in description",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-scope/your-pkg-name.git"
+  },
+  "files": [
+    "index.js",
+    "scripts",
+    "src",
+    "Runtime",
+    "Samples",
+    "README.md",
+    "readmefiles"
+  ],
+  "keywords": [
+    "unity",
+    "unity3d",
+    "plugin",
+    "package",
+    "csharp",
+    "npm",
+    "unpm"
+  ],
+  "author": "larrykirschner@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-scope/your-pkg-name/issues"
+  },
+  "homepage": "https://github.com/your-scope/your-pkg-name",
+  "scripts": {
+    "clean": "rm -f *.tgz package-lock.json && cd test && npm run clean",
+    "template-update": "node scripts/template-update.js",
+    "pretest-install": "rm -f *.tgz",
+    "test-install:pack-unpm": "rm beatthat-unity-npm-utils*.tgz & npm pack @beatthat/unity-npm-utils && mv $(ls beatthat-unity-npm-utils*.tgz) beatthat-unity-npm-utils.tgz",
+    "test-install:pack": "npm pack && cp ${npm_package_name}-${npm_package_version}.tgz ${npm_package_name}-latest.tgz ",
+    "test-install": "npm run test-install:pack-unpm && npm run test-install:pack && cd test && npm run clean && npm install",
+    "test-cp2src": "cd test && node scripts/cp2src.js",
+    "test-overwrite2src": "cd test && node scripts/overwrite2src.js",
+    "docs-generate": "node scripts/docs-generate.js",
+    "version": "git add -A",
+    "postinstall": "node scripts/postinstall.js",
+    "postversion": "git push && git push --tags && npm run clean",
+    "//": {
+      "clean": "deletes all non source files, products of tests etc",
+      "template-update": "pulls the latest version of the https://github.com/beatthat/unpm-unity-package-template.git and syncs changes to this package",
+      "test-install": "installs the 'test' package, which can be used for development",
+      "test-cp2src": "copies changes from 'test' package back to package src but does NOT delete removed files",
+      "test-overwrite2src": "copies changes from 'test' package back to src. Deletes src before the copy, so effectively whatever is in test becomes the src",
+      "npm version [patch|minor|major]": "after everything commited, use npm version to push a tagged release with bumped version"
+    }
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "@beatthat/unity-npm-utils": "^1.0.85"
+  }
+}
