@@ -7,6 +7,17 @@ using Newtonsoft.Json.Linq;
 
 namespace BeatThat.Serializers.Newtonsoft
 {
+    public class JsonNetSerializer
+    {
+        public static void UseAsDefault()
+        {
+            BeatThat.Serializers.SerializerConfig.SetDefaultSerializer(
+                new JsonNetSerializerFactory()
+            );
+        }
+
+    }
+
     public class JsonNetSerializer<T> : ReaderBase<T>, Serializer<T>
     {
         public static Serializer<T> SHARED_INSTANCE = new JsonNetSerializer<T>();
