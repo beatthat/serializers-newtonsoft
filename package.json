@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "path": "^0.12.7",
-    "@beatthat/unity-npm-utils": "^1.0.85"
+    "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^1.0.85",
+    "serializers": "github:beatthat/serializers#semver:^1.0.0"
   }
 }
